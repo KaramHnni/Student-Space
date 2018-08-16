@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Site\Auth;
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use Illuminate\Http\Request;
@@ -20,10 +22,12 @@ class SignUpController extends Controller
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
             $user->save();
+            if(Auth::attempt(['email' =>$request->email ,'password' =>$request->password])){
+                
+             return redirect()->intended('home');
 
-            
+            }
 
-            return redirect('/');
 
     }
 }
