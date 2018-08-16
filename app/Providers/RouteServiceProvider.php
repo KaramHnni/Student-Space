@@ -38,12 +38,13 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapSiteRoutes();
+        $this->mapUserRoutes();
 
         //
     }
 
     /**
-     * Define the "web" routes for the application.
+     * Define the "site" routes for the application.
      *
      * These routes all receive session state, CSRF protection, etc.
      *
@@ -54,6 +55,20 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('site')
              ->namespace($this->namespace .'\Site')
              ->group(base_path('routes/site.php'));
+    }
+
+    /**
+     * Define the "user" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapUserRoutes()
+    {
+        Route::middleware('user')
+             ->namespace($this->namespace .'\User')
+             ->group(base_path('routes/user.php'));
     }
 
     /**

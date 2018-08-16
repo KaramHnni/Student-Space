@@ -19,7 +19,7 @@ class SignInController extends Controller
 
         if(Auth::attempt($credentials)){
           
-            
+            return redirect()->intended('home');
         }
 
     }
