@@ -1,10 +1,15 @@
 @extends('layouts/site')
 @section('page-title')
 
-StudentSpace
+StudentSpace | Dive in your dedicated space
 
 @endsection
 @section('content')
 
-<h1>Hey</h1>
+    <div class=" min-h-screen">
+        <div>
+                @include('components/site/header')
+        </div>
+    </div>
+
 @endsection

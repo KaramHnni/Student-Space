@@ -6,6 +6,11 @@
 }
 body{
     font-family:'Railway',sans-serif;
-    position:relative;
-    
+    position:relative;   
+}
+ul{
+    list-style:none;
+}
+a{
+    text-decoration:none;
 }

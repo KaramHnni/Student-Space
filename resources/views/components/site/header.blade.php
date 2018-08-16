@@ -1,0 +1,20 @@
+<nav class="flex flex-wrap justify-between px-8 py-4 items-center bg-blue">
+    <div class="flex flex-wrap justify-around items-center">
+    <a href="" class="text-white text-2xl ">Student Space</a>
+    <div class="ml-8" >
+        <ul class="   flex flex-wrap items-center">
+            <li class="px-4"><a class="text-white" href="#">Services</a></li>
+            <li class="px-4"><a class="text-white" href="#">About Us</a></li>
+            <li class="px-4"><a class="text-white" href="#">Contact</a></li>
+        </ul>
+    </div>
+    </div>
+    <div>
+        <a href="" class="inline-block px-4 py-2 text-white border border-solid border-white rounded mr-2 ">Sign In</a>
+        <a href="" class="inline-block px-4 py-2 bg-white border border-solid border-white text-blue-dark  rounded ml-2">Sign Up</a>
+    </div>
+
+
+
+
+</nav>
