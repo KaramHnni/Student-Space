@@ -20,7 +20,10 @@ class SignInController extends Controller
         if(Auth::attempt($credentials)){
           
             return redirect()->intended('home');
+        }else{
+            return redirect(route('site.sign-in'));
         }
+
 
     }
 }

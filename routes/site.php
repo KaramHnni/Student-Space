@@ -21,6 +21,5 @@ Route::post('/sign-in','Auth\SignInController@authentificate');
 
 Route::get('/sign-up','Auth\SignUpController@show')->name('site.sign-up');
 Route::post('/sign-up','Auth\SignUpController@register');
-
 Route::get('/sign-out','Auth\SignOutController@signout')->name('site.sign-out');
 
