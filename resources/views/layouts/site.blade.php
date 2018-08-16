@@ -15,6 +15,20 @@
     
     </head>
     <body>
-        @yield('content')
+            <div class=" min-h-screen">
+                    <div>
+                        @include('components/site/header')
+                    </div>
+
+                    <div>
+                        @yield('main-content')
+                    </div>
+                        
+                    <div>
+                     </div>
+
+
+                </div>
+            
     </body>
 </html>
