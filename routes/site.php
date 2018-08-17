@@ -22,5 +22,7 @@ Route::get('/sign-up/student','Auth\SignUpController@showStudent')->name('site.s
 Route::get('/sign-up/teacher','Auth\SignUpController@showTeacher')->name('site.sign-up.teacher');
 Route::post('/sign-up/student','Auth\SignUpController@registerStudent');
 Route::post('/sign-up/teacher','Auth\SignUpController@registerTeacher');
+Route::get('/sign-up/student/info','Auth\SignUpController@showStudentInfo')->name('site.sign-up.student.info');
+Route::post('/sign-up/student/info','Auth\SignUpController@registerStudentInfo');
 Route::get('/sign-out','Auth\SignOutController@signout')->name('site.sign-out');
 
