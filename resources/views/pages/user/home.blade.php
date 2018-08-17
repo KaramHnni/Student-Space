@@ -5,5 +5,5 @@ StudentSpace | Dive in your dedicated space
 
 @endsection
 @section('main-content')
-    this is the main
+    you are logged in 
 @endsection

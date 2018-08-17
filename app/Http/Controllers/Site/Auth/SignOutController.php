@@ -11,7 +11,7 @@ class SignOutController extends Controller
 
         auth()->logout();
         request()->session()->flush();
-        return redirect(route('site.sign-in'));
+        return redirect(route('login'));
 
     }
 }

@@ -12,22 +12,47 @@ use App\Http\Controllers\Controller;
 class SignUpController extends Controller
 {
     public function show( ){
-        return view('pages.site.auth.signup');
+        return view('pages.site.auth.sign-up-index');
+    }
+    public function showStudent( ){
+        return view('pages.site.auth.sign-up-student');
+    }
+    public function showTeacher( ){
+        return view('pages.site.auth.sign-up-teacher');
     }
 
-    public function register(Request $request){
+    public function registerStudent(Request $request){
 
+            $type='student';
             $user= new User;
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
+            $user->type = $type;
             $user->save();
             if(Auth::attempt(['email' =>$request->email ,'password' =>$request->password])){
                 
-             return redirect()->intended('home');
+             return redirect()->intended('/user/dashboard');
 
             }
 
 
     }
+    public function registerTeacher(Request $request){
+
+        $type='teacher';
+        $user= new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->type = $type;
+        $user->save();
+        if(Auth::attempt(['email' =>$request->email ,'password' =>$request->password])){
+            
+         return redirect()->intended('/user/dashboard');
+
+        }
+
+
+}
 }

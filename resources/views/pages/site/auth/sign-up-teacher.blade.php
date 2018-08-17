@@ -6,7 +6,7 @@ Sign Up
 
 @section('main-content')
 
-<form class="ml-4" method="POST" action="{{Route('site.sign-up')}}" >
+<form class="ml-4" method="POST" action="{{Route('site.sign-up.teacher')}}" >
         @csrf
         <input class="block mb-4 border border-solid" type="text" name="name" placeholder="name">      
 <input class=" block border mb-4 border-solid" type="email" name="email" placeholder="email">

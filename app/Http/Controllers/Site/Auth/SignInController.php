@@ -19,9 +19,9 @@ class SignInController extends Controller
 
         if(Auth::attempt($credentials)){
           
-            return redirect()->intended('home');
+            return redirect()->intended('user/dashboard');
         }else{
-            return redirect(route('site.sign-in'));
+            return redirect(route('login'));
         }
 
 

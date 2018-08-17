@@ -15,11 +15,12 @@ Route::get('/','HomeController@show')->name('site.home');
 Route::get('/services','Ressources\ServicesController@show')->name('site.services');
 Route::get('/about','Ressources\AboutController@show')->name('site.about');
 Route::get('/contact','Ressources\ContactController@show')->name('site.contact');
-
-Route::get('/sign-in','Auth\SignInController@show')->name('site.sign-in');
+Route::get('/sign-in','Auth\SignInController@show')->name('login');
 Route::post('/sign-in','Auth\SignInController@authentificate');
-
 Route::get('/sign-up','Auth\SignUpController@show')->name('site.sign-up');
-Route::post('/sign-up','Auth\SignUpController@register');
+Route::get('/sign-up/student','Auth\SignUpController@showStudent')->name('site.sign-up.student');
+Route::get('/sign-up/teacher','Auth\SignUpController@showTeacher')->name('site.sign-up.teacher');
+Route::post('/sign-up/student','Auth\SignUpController@registerStudent');
+Route::post('/sign-up/teacher','Auth\SignUpController@registerTeacher');
 Route::get('/sign-out','Auth\SignOutController@signout')->name('site.sign-out');
 

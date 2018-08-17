@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/','indexController@redirectToDashboard');
-Route::get('/home','DashboardController@show')->name('user.dashboard');
+Route::get('/','indexController@redirectToDashboard')->name('home');
+Route::get('/dashboard','DashboardController@show')->name('user.dashboard');
