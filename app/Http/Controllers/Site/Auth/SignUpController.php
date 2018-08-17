@@ -49,7 +49,6 @@ class SignUpController extends Controller
         $user->type = $type;
         $user->save();
         if(Auth::attempt(['email' =>$request->email ,'password' =>$request->password])){
-                $id=Auth()->user()->id;
          return redirect(route('site.sign-up.student.info'));
 
         }
