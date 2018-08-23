@@ -16,5 +16,16 @@ class Absence extends Model
         return  $this->hasOne('\App\Module','id','module_id');
       }
 
+      public function getStatus(){
+        if($this->status == 0){
+          return "Not Justified";
+          
+        }
+        if($this->status ==1){
+          return "Justified";
+        }
+      }
+      
+
     
 }

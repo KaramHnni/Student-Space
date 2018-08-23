@@ -6,9 +6,15 @@ Absences
 @section('main-content')
 <p>You Have {{$absences->count()}} absences</p>
 @foreach($absences as $absence)
+<p>
+{{$absence->module->getFullNameAttribute()}}
+{{$absence->seance->name}}
+{{$absence->getStatus()}}
+@if($absence->status == 0)
+<a href="#">Justify</a>
+@endif
 
-{{$absence->module->name}}
-
+</p>
 @endforeach
 
 @endsection
