@@ -15,4 +15,6 @@ class Absence extends Model
     public function module(){
         return  $this->hasOne('\App\Module','id','module_id');
       }
+
+    
 }
