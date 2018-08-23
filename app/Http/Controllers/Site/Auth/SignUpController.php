@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Student;
+use App\City;
+use App\Departement;
+use App\Year;
+use App\Groupe;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -57,8 +61,13 @@ class SignUpController extends Controller
 
 }
 public function showStudentInfo(){
+    
+    return view('pages.user.auth.student.sign-up-student',[
 
-    return view('pages.user.auth.student.sign-up-student');
+        "cities" => City::all(),
+        "departements" => Departement::all(),
+        "years" => Year::all()
+    ]);
 }
 public function registerStudentInfo(Request $request){
     $student=new Student;
