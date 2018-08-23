@@ -12,4 +12,7 @@ class Absence extends Model
     public function seance(){
       return  $this->hasOne('\App\Seance','id','seance_id');
     }
+    public function module(){
+        return  $this->hasOne('\App\Module','id','module_id');
+      }
 }
