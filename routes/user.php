@@ -13,5 +13,7 @@
 
 Route::get('/','indexController@redirectToDashboard')->name('home');
 Route::get('/dashboard','DashboardController@show')->name('user.dashboard');
-Route::get('/profile','Profile\ProfileController@show')->name('user.profile');
+Route::get('/profile','Profile\OverviewController@show')->name('user.profile');
+Route::get('/profile/edit/details','Profile\DetailsController@show')->name('user.profile.edit.details');
+Route::post('/profile/edit/details/student','Profile\DetailsController@updateStudent')->name('user.profile.edit.details.student');
 Route::get('/absence','Absences\AbsencesController@show')->name('user.absences');

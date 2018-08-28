@@ -27,7 +27,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
+    public function getDetailsAttribute(){
+        if($this->type == 'student'){
+            return Student::where('user_id',$this->id)->first();
+        }
+        
+    }
     
 }
 

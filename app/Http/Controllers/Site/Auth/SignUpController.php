@@ -9,7 +9,6 @@ use App\Student;
 use App\City;
 use App\Departement;
 use App\Year;
-use App\Groupe;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -28,7 +27,7 @@ class SignUpController extends Controller
 
     public function registerTeacher(Request $request){
 
-            $type='student';
+            $type='teacher';
             $user= new User;
             $user->name = $request->name;
             $user->email = $request->email;
@@ -45,7 +44,7 @@ class SignUpController extends Controller
     }
     public function registerStudent(Request $request){
 
-        $type='teacher';
+        $type='student';
         $user= new User;
         $user->name = $request->name;
         $user->email = $request->email;
@@ -79,7 +78,7 @@ public function registerStudentInfo(Request $request){
     $student->phone=$request->phone;
     $student->departement=$request->departement;
     $student->year_of_study=$request->year_of_study;
-    $student->groupe=$request->groupe;
+    
     $student->email=auth()->user()->email;
     $student->save();
     return redirect()->intended('/user/dashboard');

@@ -25,6 +25,11 @@ class Absence extends Model
           return "Justified";
         }
       }
+
+      public function fetchLatestAbsences(){
+
+       
+      }
       
 
     
