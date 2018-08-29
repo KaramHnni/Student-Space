@@ -4,19 +4,15 @@
 Absences
 @endsection
 @section('main-content')
-@if($absencescount = $absences->where('status','0')->count() > 0)
+@if( $absences->where('status','0')->count() > 0)
 @component('components.alert',['type'=>'danger'])
 @slot('content')
-You Have {{$absencescount}} 
-    @if($absencescount = 1)
-    absence
-    @else
-absences
-@endif
+You have {{$absences->where('status','0')->count()}} Unjustified Absence
+
 @endslot
 @endcomponent
 @endif
-<table class="table-fixed border-collapse mx-auto mt-16 border border-solid border-grey-light bg-white">
+<table class="table-fixed border-collapse w-3/5 mx-auto mt-16 border border-solid border-grey-light bg-white">
     <tr class="bg-grey-lightest">
    
     <th>Date</th>
@@ -33,8 +29,10 @@ absences
 <td>{{$absence->seance->name}}</td>
 <td>{{$absence->getStatus()}}</td>
 <td>
-    @if($absence->status ==0)
+    @if($absence->status == 0)
 <a href="absence/{{$absence->id}}/justify" class=" inline-block px-4 py-2  bg-blue shadow rounded text-white">Justify</a>
+    @elseif($absence->status == 2)
+    <p class=" inline-block px-2 py-2  bg-green-dark  rounded text-white">waiting ..</p>
     @else
         <p class=" inline-block px-2 py-2  bg-grey  rounded text-white">Justified</p>
     @endif

@@ -18,3 +18,4 @@ Route::get('/profile/edit/details','Profile\DetailsController@show')->name('user
 Route::post('/profile/edit/details/student','Profile\DetailsController@updateStudent')->name('user.profile.edit.details.student');
 Route::get('/absence','Absences\AbsencesController@show')->name('user.absence');
 Route::get('/absence/{id}/justify','Absences\JustificationsController@show')->name('user.absence.justify');
+Route::post('/absence/justify','Absences\JustificationsController@store')->name('user.absence.justified');

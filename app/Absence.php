@@ -15,6 +15,9 @@ class Absence extends Model
     public function module(){
         return  $this->hasOne('\App\Module','id','module_id');
       }
+      public function Justification(){
+        return $this->hasOne('\App\Justification');
+      }
 
       public function getStatus(){
         if($this->status == 0){
@@ -23,6 +26,9 @@ class Absence extends Model
         }
         if($this->status ==1){
           return "Justified";
+        }
+        if($this->status==2){
+          return "waiting for approval";
         }
       }
 
