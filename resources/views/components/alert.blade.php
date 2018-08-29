@@ -8,6 +8,10 @@
             <div class="mx-8 font-bold mt-4 w-1/2 mx-auto p-4 bg-red-light text-white border-red-light border border-solid">
 
         @break
+        @case('info')
+            <div class="mx-8 font-bold mt-4 w-1/2 mx-auto p-4 bg-blue-light text-white border-blue-light border border-solid">
+
+        @break
     @endswitch
 @endisset
         <p>{{$content}}<p>

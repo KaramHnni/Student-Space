@@ -4,12 +4,24 @@
 Absences
 @endsection
 @section('main-content')
+@if($absences->count() > 0)
 @if( $absences->where('status','0')->count() > 0)
 @component('components.alert',['type'=>'danger'])
 @slot('content')
 You have {{$absences->where('status','0')->count()}} Unjustified Absence
 
 @endslot
+@endcomponent
+
+@endif
+@if(session('justification'))
+
+@component('components.alert',['type'=>'success'])
+
+@slot('content')
+    Your Justification has been sent successfully
+@endslot
+
 @endcomponent
 @endif
 <table class="table-fixed border-collapse w-3/5 mx-auto mt-16 border border-solid border-grey-light bg-white">
@@ -42,4 +54,14 @@ You have {{$absences->where('status','0')->count()}} Unjustified Absence
 
 @endforeach
 </table>
+@else
+
+@component('components.alert',['type'=>'info'])
+@slot('content')
+You have No Absence to display
+
+@endslot
+@endcomponent
+
+@endif
 @endsection

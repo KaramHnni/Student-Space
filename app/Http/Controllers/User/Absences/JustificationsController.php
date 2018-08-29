@@ -24,7 +24,7 @@ class JustificationsController extends Controller
         $justification = new justification;
         $justification =$justification->store($request);
         
-        return redirect('user/absence');
+        return redirect('user/absence')->with(['justification'=>true]);
 
 
 
