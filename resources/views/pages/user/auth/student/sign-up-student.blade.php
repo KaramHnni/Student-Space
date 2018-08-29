@@ -6,31 +6,40 @@ Complete Sign Up
 
 @endsection
 @section('main-content')
-<form action="{{route('site.sign-up.student.info')}}" method="POST">
-        {{ csrf_field() }}
-<input type="text" placeholder="first name" class="block border border-solid" name="first_name">
-<input type="text" placeholder="last name" class="block border-border-solid" name="last_name">
-<select name="place_of_birth">
-        @foreach($cities as $city)
-<option value="{{$city->id}}" class="block">{{$city->getFullNameAttribute()}}</option>
-@endforeach
-</select>
-<input type="date" class="block" name="date_of_birth">
-<input type="text" class="block" placeholder="Phone Number" class="block" name="phone">
-<select class="block" name="departement">
-@foreach($departements as $departement)
-        <option value="{{$departement->id}}">{{$departement->getFullNameAttribute()}}</option>
-@endforeach
-        </select>
+<div class="lg:w-2/3 mx-auto mt-16 bg-blue-lightest pb-4 shadow text-center rounded ">
+        <h1 class="py-4 bg-white font-semibold text-xl">Sign Up As Student </h1>
 
-<select class="block" name="year_of_study">
-@foreach($years as $year)
-<option value="{{$year->id}}">{{$year->getFullNameAttribute()}}</option>
-@endforeach
-</select> <input type="submit" value="Sign Up" class="inline-block ">
+        <form action="{{route('site.sign-up.student.info')}}" method="POST">
+                @csrf
+                <div class="flex justify-around">
+                        
+                        <input id="first_name" type="text" placeholder="first name" class="focus:border focus:border-solid focus:border-blue-light block mx-auto rounded w-2/5 px-4 py-4 my-8 border border-solid" name="first_name">
+                        <input type="text" placeholder="last name" class="focus:border focus:border-solid focus:border-blue-light block mx-auto rounded w-2/5 px-4 py-4 my-8 border border-solid" name="last_name">
+                </div>
+                <select name="place_of_birth" class="focus:border appearence-none focus:border-solid focus:border-blue-light block mx-auto rounded w-4/5 px-4 py-4 my-8 border border-solid">
+                       <option value="">Select Your City</option>
+                        @foreach($cities as $city)
+                                <option value="{{$city->id}}" class="block">{{$city->getFullNameAttribute()}}</option>
+                        @endforeach
+                </select>
+                <input type="date" class="focus:border appearence-none focus:border-solid focus:border-blue-light block mx-auto rounded w-4/5 px-4 py-4 my-8 border border-solid" placeholder="date of birth" name="date_of_birth">
+                <input type="text" class="focus:border appearence-none focus:border-solid focus:border-blue-light block mx-auto rounded w-4/5 px-4 py-4 my-8 border border-solid" placeholder="Phone Number" class="block" name="phone"> 
+                <select class="focus:border appearence-none focus:border-solid focus:border-blue-light block mx-auto rounded w-4/5 px-4 py-4 my-8 border border-solid" name="departement">
+                        <option value="">Select Your Departement</option>
+                        @foreach($departements as $departement)
+                                <option value="{{$departement->id}}">{{$departement->getFullNameAttribute()}}</option>
+                        @endforeach
+                </select>
+                <select class="focus:border appearence-none focus:border-solid focus:border-blue-light block mx-auto rounded w-4/5 px-4 py-4 my-8 border border-solid" name="year_of_study">
+                        <option value="">Select Your Year Of Study</option>
+                        @foreach($years as $year)
+                                <option value="{{$year->id}}">{{$year->getFullNameAttribute()}}</option>
+                        @endforeach
+                </select> 
+                <input type="submit" value="Sign Up" class=" cursor-pointer inline-block px-4 py-2 mb-4 bg-blue shadow rounded text-white">
+                <a href="{{Route('user.dashboard')}}"class="text-sm text-blue-dark ml-4 underline ">Skip</a>
 
-
-    </form>
+        </form>
 
 
 @endsection

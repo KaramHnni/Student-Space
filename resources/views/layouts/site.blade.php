@@ -14,13 +14,14 @@
 
     
     </head>
-    <body>
-            <div class=" min-h-screen">
+    <body class=" bg-grey-lighter">
+
+            <div >
                     <div>
                         @include('components/site/header')
                     </div>
 
-                    <div>
+                    <div class="">
                         @yield('main-content')
                     </div>
                         

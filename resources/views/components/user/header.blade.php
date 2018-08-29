@@ -8,8 +8,8 @@
                 @endauth
         <div class="ml-8" >
             <ul class="   flex flex-wrap items-center">
-            <li class="px-4"><a class="text-white" href="{{Route('site.services')}}">Services</a></li>
-                <li class="px-4"><a class="text-white" href="{{Route('site.about')}}">About Us</a></li>
+            <li class="px-4"><a class="text-white" href="{{Route('user.absence')}}">Absences</a></li>
+                <li class="px-4"><a class="text-white" href="">Notes</a></li>
                 <li class="px-4"><a class="text-white" href="{{Route('site.contact')}}">Contact</a></li>
             </ul>
         </div>
@@ -21,7 +21,7 @@
             @endguest
             @auth
 
-        <a href="" class="inline-block px-4 py-2 text-white border border-solid border-white rounded mr-2 ">{{auth()->user()->name}}</a>
+        <a href="{{Route('user.profile')}}" class="inline-block px-4 py-2 text-white border border-solid border-white rounded mr-2 ">{{auth()->user()->name}}</a>
             <a href="{{Route('site.sign-out')}}" class="inline-block px-4 py-2 bg-white border border-solid border-white text-blue-dark  rounded ml-2">Sign Out</a>
     
             @endauth
