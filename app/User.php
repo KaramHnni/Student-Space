@@ -31,6 +31,9 @@ class User extends Authenticatable
         if($this->type == 'student'){
             return Student::where('user_id',$this->id)->first();
         }
+        if($this->type == 'teacher'){
+            return Teacher::where('user_id',$this->id)->first();
+        }
         
     }
     

@@ -16,6 +16,8 @@ Route::get('/dashboard','DashboardController@show')->name('user.dashboard');
 Route::get('/profile','Profile\OverviewController@show')->name('user.profile');
 Route::get('/profile/edit/details','Profile\DetailsController@show')->name('user.profile.edit.details');
 Route::post('/profile/edit/details/student','Profile\DetailsController@updateStudent')->name('user.profile.edit.details.student');
+Route::post('/profile/edit/details/teacher','Profile\DetailsController@updateTeacher')->name('user.profile.edit.details.teacher');
+
 Route::get('/absence','Absences\AbsencesController@show')->name('user.absence');
 Route::get('/absence/{id}/justify','Absences\JustificationsController@show')->name('user.absence.justify');
 Route::post('/absence/justify','Absences\JustificationsController@store')->name('user.absence.justified');

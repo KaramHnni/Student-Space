@@ -6,16 +6,18 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Student;
+use App\Teacher;
 use App\City;
 use App\Departement;
 use App\Year;
+use App\Module;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 
 class SignUpController extends Controller
 {
-    public function show( ){
+    public function show(){
         return view('pages.site.auth.sign-up-index');
     }
     public function showStudent( ){
@@ -79,8 +81,7 @@ public function registerTeacher(Request $request){
     $user->save();
     if(Auth::attempt(['email' =>$request->email ,'password' =>$request->password])){
         
-     return redirect()->intended('/user/dashboard');
-
+        return redirect(route('site.sign-up.teacher.info'));
     }
 
 
@@ -88,12 +89,25 @@ public function registerTeacher(Request $request){
 
 
 public function showTeacherInfo(){
-    return view('pages.user.auth.student.sign-up-student',[
+    return view('pages.user.auth.teacher.sign-up-teacher',[
 
-        "modules" => Module::all(),
+        "cities" => City::all(),
         "departements" => Departement::all(),
-        "years" => Year::all()
     ]);
 }
-public function registerTeacherInfo(){}
+public function registerTeacherInfo(Request $request){
+
+    $teacher=new Teacher;
+    $teacher->user_id = auth()->user()->id;
+    $teacher->first_name=$request->first_name;
+    $teacher->last_name=$request->last_name;
+    $teacher->place_of_birth=$request->place_of_birth;
+    $teacher->date_of_birth=$request->date_of_birth;
+    $teacher->Grade = $request->grade;
+    $teacher->phone=$request->phone;
+    $teacher->speciality=$request->speciality;
+    $teacher->save();
+    return redirect()->intended('/user/dashboard');
+
+}
 }

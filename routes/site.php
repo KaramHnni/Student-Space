@@ -24,5 +24,7 @@ Route::post('/sign-up/student','Auth\SignUpController@registerStudent');
 Route::post('/sign-up/teacher','Auth\SignUpController@registerTeacher');
 Route::get('/sign-up/student/info','Auth\SignUpController@showStudentInfo')->name('site.sign-up.student.info');
 Route::post('/sign-up/student/info','Auth\SignUpController@registerStudentInfo');
+Route::get('/sign-up/teacher/info','Auth\SignUpController@showTeacherInfo')->name('site.sign-up.teacher.info');
+Route::post('/sign-up/teacher/info','Auth\SignUpController@registerTeacherInfo');
 Route::get('/sign-out','Auth\SignOutController@signout')->name('site.sign-out');
 
