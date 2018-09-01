@@ -25,23 +25,6 @@ class SignUpController extends Controller
         return view('pages.site.auth.sign-up-teacher');
     }
 
-    public function registerTeacher(Request $request){
-
-            $type='teacher';
-            $user= new User;
-            $user->name = $request->name;
-            $user->email = $request->email;
-            $user->password = Hash::make($request->password);
-            $user->type = $type;
-            $user->save();
-            if(Auth::attempt(['email' =>$request->email ,'password' =>$request->password])){
-                
-             return redirect()->intended('/user/dashboard');
-
-            }
-
-
-    }
     public function registerStudent(Request $request){
 
         $type='student';
@@ -83,4 +66,34 @@ public function registerStudentInfo(Request $request){
     $student->save();
     return redirect()->intended('/user/dashboard');
 }
+
+
+public function registerTeacher(Request $request){
+
+    $type='teacher';
+    $user= new User;
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->password = Hash::make($request->password);
+    $user->type = $type;
+    $user->save();
+    if(Auth::attempt(['email' =>$request->email ,'password' =>$request->password])){
+        
+     return redirect()->intended('/user/dashboard');
+
+    }
+
+
+}
+
+
+public function showTeacherInfo(){
+    return view('pages.user.auth.student.sign-up-student',[
+
+        "modules" => Module::all(),
+        "departements" => Departement::all(),
+        "years" => Year::all()
+    ]);
+}
+public function registerTeacherInfo(){}
 }

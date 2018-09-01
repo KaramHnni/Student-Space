@@ -10,4 +10,7 @@ class Departement extends Model
 
         return "$this->abbreviation"." : "."$this->name";
     }
+    public function specialities(){
+        return $this->hasMany('\App\Speciality','departement_id','id');
+    }
 }
