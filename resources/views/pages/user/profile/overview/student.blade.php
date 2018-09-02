@@ -30,19 +30,23 @@
 </div>
 <div class="px-8 flex items-center py-4 border-b-2 border-solid border-grey-lighter">
     <h3>Place Of Birth</h3>
-    <p class="flex-grow text-center">{{auth()->user()->details->place_of_birth}}</p>
+    <p class="flex-grow text-center">{{auth()->user()->details->city->CityCode}} {{auth()->user()->details->city->name}} </p>
 </div>
 <div class="px-8 flex items-center py-4 border-b-2 border-solid border-grey-lighter">
     <h3>Phone Number</h3>
-    <p class="flex-grow text-center">{{auth()->user()->details->phone}}</p>
+    <p class="flex-grow text-center">{{auth()->user()->details->PhoneNumber}}</p>
 </div>
 <div class="px-8 flex items-center py-4 border-b-2 border-solid border-grey-lighter">
     <h3>Departement</h3>
-    <p class="flex-grow text-center">{{auth()->user()->details->departement}}</p>
+    <p class="flex-grow text-center">{{auth()->user()->details->year->speciality->departement->name }}</p>
+</div>
+<div class="px-8 flex items-center py-4 border-b-2 border-solid border-grey-lighter">
+    <h3>Speciality</h3>
+    <p class="flex-grow text-center">{{auth()->user()->details->year->speciality->name}}</p>
 </div>
 <div class="px-8 flex items-center py-4 border-b-2 border-solid border-grey-lighter">
     <h3>Year Of Study</h3>
-    <p class="flex-grow text-center">{{auth()->user()->details->year_of_study}}</p>
+    <p class="flex-grow text-center">{{auth()->user()->details->year->FullName}}</p>
 </div>
    
 

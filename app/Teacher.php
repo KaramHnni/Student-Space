@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
+
+    public function seances(){
+        return $this->hasMany('App\Seance','teacher_id','id');
+    }
     public function getFullNameAttribute(){
         return "$this->first_name $this->last_name";
     }

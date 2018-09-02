@@ -11,6 +11,7 @@ use App\City;
 use App\Departement;
 use App\Year;
 use App\Module;
+use App\Speciality;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -49,8 +50,7 @@ public function showStudentInfo(){
     return view('pages.user.auth.student.sign-up-student',[
 
         "cities" => City::all(),
-        "departements" => Departement::all(),
-        "years" => Year::all()
+        "specialities" => Speciality::all()
     ]);
 }
 public function registerStudentInfo(Request $request){
@@ -58,12 +58,10 @@ public function registerStudentInfo(Request $request){
     $student->user_id = auth()->user()->id;
     $student->first_name=$request->first_name;
     $student->last_name=$request->last_name;
-    $student->place_of_birth=$request->place_of_birth;
+    $student->city_id=$request->place_of_birth;
     $student->date_of_birth=$request->date_of_birth;
     $student->phone=$request->phone;
-    $student->departement=$request->departement;
-    $student->year_of_study=$request->year_of_study;
-    
+    $student->year_id = $request->year;
     $student->email=auth()->user()->email;
     $student->save();
     return redirect()->intended('/user/dashboard');
