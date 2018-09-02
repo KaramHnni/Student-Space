@@ -30,7 +30,7 @@
 </div>
 <div class="px-8 flex items-center py-4 border-b-2 border-solid border-grey-lighter">
     <h3>Place Of Birth</h3>
-    <p class="flex-grow text-center">{{auth()->user()->details->city->CityCode}} {{auth()->user()->details->city->name}} </p>
+    <p class="flex-grow text-center">{{auth()->user()->details->city->FullName}} </p>
 </div>
 <div class="px-8 flex items-center py-4 border-b-2 border-solid border-grey-lighter">
     <h3>Phone Number</h3>
