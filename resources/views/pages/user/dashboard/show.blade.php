@@ -6,7 +6,7 @@
 
 Welcome Home {{auth()->user()->Details->FullName}}
 
-<p>The modules you are responsible of are for the First Year are  : </p>
+<p>The modules you are responsible of are<br/> for the First Year are  : </p>
 
 @foreach(auth()->user()->details->seances as $seance)
 
@@ -23,6 +23,13 @@ Welcome Home {{auth()->user()->Details->FullName}}
 @endforeach
 
 the list of students you are responsible of are : 
+
+@foreach(auth()->user()->Details->seances as $seance)
+
+<p>$sea</p>
+
+@endforeach
+
 
 
 

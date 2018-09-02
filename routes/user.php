@@ -18,6 +18,7 @@ Route::get('/profile/edit/details','Profile\DetailsController@show')->name('user
 Route::post('/profile/edit/details/student','Profile\DetailsController@updateStudent')->name('user.profile.edit.details.student');
 Route::post('/profile/edit/details/teacher','Profile\DetailsController@updateTeacher')->name('user.profile.edit.details.teacher');
 
-Route::get('/absence','Absences\AbsencesController@show')->name('user.absence');
-Route::get('/absence/{id}/justify','Absences\JustificationsController@show')->name('user.absence.justify');
-Route::post('/absence/justify','Absences\JustificationsController@store')->name('user.absence.justified');
+Route::get('/absence','Absences\student\AbsencesController@show')->name('user.absence')->middleware('AccessStudent');
+Route::get('/absence/{id}/justify','Absences\student\JustificationsController@show')->name('user.absence.justify')->middleware('AccessStudent');
+Route::post('/absence/justify','Absences\student\JustificationsController@store')->name('user.absence.justified')->middleware('AccessStudent');
+Route::get('/absence/create','Absences\teacher\AbsencesController@create')->name('user.absence.create')->middleware('AccessTeacher');
