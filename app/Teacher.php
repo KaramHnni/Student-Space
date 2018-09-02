@@ -11,7 +11,7 @@ class Teacher extends Model
         return $this->hasMany('App\Seance','teacher_id','id');
     }
     public function getFullNameAttribute(){
-        return "$this->first_name $this->last_name";
+        return "$this->Grade $this->first_name $this->last_name";
     }
 
     

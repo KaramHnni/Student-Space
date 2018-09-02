@@ -11,7 +11,7 @@ class Module extends Model
     }
     
     public function year(){
-        return $this->hasOne('\App\Module','id','year_id');
+        return $this->hasOne('\App\Year','id','year_id');
     }
     public function seances(){
         return $this->hasMany('\App\Seance','module_id','id');

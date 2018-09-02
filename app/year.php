@@ -19,7 +19,7 @@ class Year extends Model
     }
 
     public function modules(){
-        return $this->hasMany('\App\Year','year_id','id');
+        return $this->hasMany('\App\Module','year_id','id');
     }
    
 

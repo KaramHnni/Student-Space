@@ -14,22 +14,22 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' =>'Karam Henni',
-            'email' =>'karam.tenes@gmail.com',
+            'name' =>'Bendimrad Nawel',
+            'email' =>'bendimrad@enpo.com',
             'password' =>Hash::make('123456'),
-            'type' =>'student'
+            'type' =>'teacher'
         ]);
         DB::table('users')->insert([
-            'name' =>'Mohamed Henni',
-            'email' =>'mohamed.tenes@gmail.com',
+            'name' =>'Djebbar Nawel',
+            'email' =>'Djebbar@enpo.com',
             'password' =>Hash::make('123456'),
-            'type' =>'student'
+            'type' =>'teacher'
         ]);
         DB::table('users')->insert([
-            'name' =>'Wail Henni',
-            'email' =>'wail.tenes@gmail.com',
+            'name' =>'Boumedjout Nawel',
+            'email' =>'Boumedjout@enpo.com',
             'password' =>Hash::make('123456'),
-            'type' =>'student'
+            'type' =>'teacher'
         ]);
     }
 }
