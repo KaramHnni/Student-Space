@@ -10,6 +10,8 @@ class Teacher extends Model
         return "$this->first_name $this->last_name";
     }
 
+    
+
     public function updateDetails($request){
         $this->first_name=$request->first_name;
         $this->last_name=$request->last_name;

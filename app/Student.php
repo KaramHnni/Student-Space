@@ -15,6 +15,10 @@ class Student extends Model
         return $this->hasMany('\App\Absence','student_id','id');
     }
 
+    public function year(){
+        return $this->hasOne('\App\Year','id','year_id');
+    }
+
     public function updateDetails($request){
         
         $this->first_name=$request->first_name;

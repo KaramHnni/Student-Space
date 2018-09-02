@@ -10,7 +10,9 @@ class Speciality extends Model
         return $this->hasOne('\App\Departement','id','departement_id');
     }
 
-    public function modules(){
-        return $this->hasMany('App\Departement','speciality_id','id');
+    
+
+    public function years(){
+        return $this->hasMany('\App\Year','speciality_id','id');
     }
 }
